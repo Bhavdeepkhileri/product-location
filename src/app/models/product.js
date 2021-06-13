@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
-
+//#why
 const Product = mongoose.model('Product', {
     productName:{
         type: String,
