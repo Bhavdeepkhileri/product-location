@@ -32,4 +32,4 @@ const location= mongoose.model('Location',{
     }
 
 })
-export default location;
+module.exports= location;
