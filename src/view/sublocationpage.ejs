@@ -7,11 +7,12 @@
     </head>
     <body>
         <h1>Location</h1>
-        <button>Add location</button>
+       <a href="http://localhost:3002/addLocationForm/<%=parent._id%>"> <button>Add location</button></a>
         <button>Back</button>
+        <br>
         <table class="table">
             <thead>
-                <tr><%=location.locationName%></tr>
+                <tr><%=parent.locationName%></tr>
                 <tr>
                     <th>Index</th>
                     <th>Location</th>
@@ -19,18 +20,34 @@
                 </tr>
             </thead>
             <tbody>
-                <% for(var i=0; i < location['children'].length; i++){%>
+                <% for(let i=0; i < locations.length; i++){%>
                 <tr>
                     <td><%= i+1 %></td>
-                    <td><a href="http://localhost:3002/getLocation/<%= location.children[i]._id%>"><%= location['children'][i].locationName %></a></td>
+                    <td><a href="http://localhost:3002/getLocation/<%= locations[i]._id%>"><%= locations[i].locationName %></a></td>
                     <td>
                         <button>Edit</button>
-                        <button>delete</button>
+                        <a href="http://localhost:3002/delete/<%=locations[i]._id%>"><button>delete</button>
                     </td>
                 </tr>
                 <%}%>
             </tbody>
         </table>
 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>product name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < product.length; i++){%>
+                <tr>
+                    <td><%= i+1 %></td>
+                    <td><%= product[i]['productName'] %></td>
+                </tr>
+                <%}%>
+            </tbody>
+        </table>
     </body>
 </html>

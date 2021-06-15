@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>
+            add product
+        </title>
+    </head>
+    <body>
+        <form action="http://localhost:3002/addProduct" method="POST" enctype="multipart/form-data">
+            <input type="text" name="productName">
+            <select name="location"">
+                <%var dash="."%>
+                <% for(var i= 0; i < locationarray.length; i++) { %>
+                  <option value='<%= locationarray[i]._id %>'>
+                      <%for(var j=0; j< locationarray[i].level-1;j++ ){%>
+                        <%= dash%>
+                        <%}%>
+                        <%=locationarray[i].locationName%>
+                    </option>
+                <% } %>
+              </select>
+              <input type="submit">
+        </form>
+    </body>
+</html>

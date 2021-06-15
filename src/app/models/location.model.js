@@ -17,15 +17,17 @@ const location= mongoose.model('Location',{
         type: Number,
         default: 0
     },
-    children:{
-        type:[{
-            type: mongoose.Schema.Types.ObjectId, 
-            ref: 'Location'
-        }],
-    },
     isDelete:{
         type: Boolean,
         default: false
+    },
+    NoOfchildren:{
+        type:Number,
+        default:0
+    },
+    hierarchy:{
+        type:String,
+        default:"0"
     }
 
 })

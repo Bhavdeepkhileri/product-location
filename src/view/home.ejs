@@ -7,8 +7,8 @@
     </head>
     <body>
         <h1>Location</h1>
-        <button>Add location</button>
-        <button>Add product</button>
+        <a href="http://localhost:3002/addLocationForm/null"><button>Add location</button></a>
+        <a href="http://localhost:3002/addProductForm"><button>Add product</button></a>
         <table class="table">
             <thead>
                 <tr>
@@ -24,7 +24,7 @@
                     <td><a href="http://localhost:3002/getLocation/<%= location[i]._id%>"><%= location[i].locationName %></a></td>
                     <td>
                         <button>Edit</button>
-                        <button>delete</button>
+                        <a href="http://localhost:3002/delete/<%= location[i]._id%>"><button>delete</button>
                     </td>
                 </tr>
                 <%}%>
