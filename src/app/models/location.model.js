@@ -1,11 +1,5 @@
 const mongoose = require('mongoose')
 
-const children=new mongoose.Schema({ 
-    childId:{
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Location'
-    }
-});
 
 
 const location= mongoose.model('Location',{
@@ -23,8 +17,11 @@ const location= mongoose.model('Location',{
         type: Number,
         default: 0
     },
-    childs:{
-        type:[children],
+    children:{
+        type:[{
+            type: mongoose.Schema.Types.ObjectId, 
+            ref: 'Location'
+        }],
     },
     isDelete:{
         type: Boolean,

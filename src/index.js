@@ -16,7 +16,7 @@ const envConfig = environment[env];
 const PORT = envConfig.port || 3000;
 
 const app = express();
-
+app.set('view engine', 'ejs');
 // open mongoose connection
 mongoose.connect(envConfig, env);
 
